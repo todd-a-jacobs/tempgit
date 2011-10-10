@@ -1,0 +1,27 @@
+# Temporary files
+*~
+*.bak
+
+# VIM files
+Session.vim
+*.swp
+
+# RDoc and YARD files
+doc/
+rdoc/
+html/
+.yardoc/
+
+# HTML output from ASCIIDoc
+README.html
+
+# Ignore machine-specific bundler files.
+.bundle
+Gemfile.lock
+
+# Ignore gem artifacts.
+*.gem
+pkg/*
+
+# Ignore tag files.
+TAGS

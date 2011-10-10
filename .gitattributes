@@ -1,0 +1,5 @@
+*.sh		export-subst
+README.asciidoc	export-subst
+
+.gitattributes	export-ignore
+.gitignore	export-ignore

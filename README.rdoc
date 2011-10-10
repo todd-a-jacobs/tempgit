@@ -1,0 +1,79 @@
+= TempGit
+
+{<img src="http://travis-ci.org/CodeGnome/tempgit.png"
+/>}[http://travis-ci.org/CodeGnome/tempgit]
+
+== Copyright and Licensing
+
+=== Copyright Notice
+
+    Copyright 2011 Todd A. Jacobs
+    All rights reserved.
+
+=== Software License
+
+http://www.gnu.org/graphics/gplv3-88x31.png
+
+The software is licensed under the
+GPLv3[http://www.gnu.org/copyleft/gpl.html].
+The LICENSE is also included in the source tree.
+
+=== README License
+
+http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png
+
+{Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+License}[http://creativecommons.org/licenses/by-nc-sa/3.0/us/]
+
+== Purpose
+
+Have you ever wanted to exercise some Git functionality in your unit or
+functional tests? The TempGit gem is designed to make life easier--and
+your filesystem cleaner--when writing Git-related tests.
+
+== Key Features
+
+TempGit has some killer features to ease Git-related testing.
+
+- Instantiate as many Git repositories as you need for testing, each
+  with its own unique directory context.
+
+- Doesn't rely on potentially-shared environment variables for GIT_DIR
+  or GIT_WORK_TREE. Each instance stores its own directory values.
+
+- Execute arbitrary Git commands in an instantiated context. If Git can
+  run it, TempGit can run it, too.
+
+- Won't clutter or clobber your current working directory.
+
+- Cleans up after itself.
+
+== Installation and Usage
+
+This gem has been tested against Ruby 1.9.2. It definitly doesn't work
+with Ruby 1.8.7, but patches are welcome.
+
+=== Installing the Gem
+
+    gem install tempgit
+
+=== Using the Library
+
+    require 'tempgit'
+
+=== Example Usage
+
+    repo = TempGit::GitDir.new
+    puts repo.git('log')
+
+    repo.add_new_file
+    puts repo.git('status')
+
+    repo.commit_with_sequence_number
+    puts repo.git('log')
+
+== Further Reading
+
+1. RubyGems[http://rubygems.org/]
+2. Git[http://git-scm.com/]
+3. RSpec[https://www.relishapp.com/rspec]
